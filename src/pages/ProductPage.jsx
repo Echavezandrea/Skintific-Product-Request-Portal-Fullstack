@@ -35,15 +35,37 @@ function ProductPage({ user }) {
     setSelected([...selected, item])
   }
 
-  const handleSubmit = () => {
-    if (selected.length === 0) {
-      alert("Please select at least 1 product")
-      return
-    }
-
-    setSubmitted(true)
+ const handleSubmit = async () => {
+  if (selected.length === 0) {
+    alert("Select at least 1 product")
+    return
   }
 
+  const data = {
+    name: user.name,
+    email: user.email,
+    date: user.date,
+    rank: user.rank,
+    cutoff: user.cutoff,
+    products: selected.join(", ")
+  }
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/api/submit/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+
+    const result = await response.json()
+    alert("🎉 Request submitted successfully!")
+  } catch (error) {
+    console.error(error)
+    alert("Error submitting request")
+  }
+}
   return (
     <div className="container">
       <h2>Choose Your Products</h2>
