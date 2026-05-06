@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f6fbff;
+}
+
+/* SPLIT */
+.split-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT */
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80px;
+}
+
+/* FORM */
+.form-box {
+  width: 360px;
+  background: white;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(37,99,235,0.1);
+}
+
+/* LOGO */
+.logo-img {
+  width: 120px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* TITLE */
+.form-box h2 {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 14px;
+  border-radius: 12px;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+/* FOCUS */
+input:focus, select:focus {
+  border-color: #3b82f6;
+  background: white;
+  outline: none;
+  box-shadow: 0 0 8px rgba(59,130,246,0.2);
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.image-section {
+  flex: 1;
+  background: linear-gradient(to bottom, #dbeafe, #bfdbfe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 80px;
+}
+
+/* GRID */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 160px);
+  gap: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.image-grid img:hover {
+  transform: scale(1.08);
+}
+
+/* PRODUCT PAGE */
+.container {
+  padding: 30px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin: 10px;
+  width: 180px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.success-box {
+  margin-top: 25px;
+  padding: 20px;
+  background: #dbeafe;
+  color: #1e3a8a;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
