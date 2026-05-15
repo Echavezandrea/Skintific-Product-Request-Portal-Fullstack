@@ -18,7 +18,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3nesgfrw#)iqfl1dopr!yftivrt3cn(t*s6&n1b7q+#nqkv#m6'
 
@@ -26,6 +25,9 @@ SECRET_KEY = 'django-insecure-3nesgfrw#)iqfl1dopr!yftivrt3cn(t*s6&n1b7q+#nqkv#m6
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://skintific-product-request.onrender.com"
+]
 
 
 # Application definition
