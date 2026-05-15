@@ -53,22 +53,31 @@ function ProductPage({ user }) {
     }
 
     try {
-      const response = await fetch("https://skintific-product-request.onrender.com/api/submit/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
+      const response = await fetch(
+        "https://skintific-product-request.onrender.com/api/submit/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        }
+      )
 
-      await response.json()
+      const result = await response.text()
 
-      setSubmitted(true)
+      console.log("SERVER RESPONSE:", result)
 
-      alert("Request submitted successfully!")
+      if (response.ok) {
+        setSubmitted(true)
+        alert("Request submitted successfully!")
+      } else {
+        alert("Server Error")
+        console.log(result)
+      }
 
     } catch (error) {
-      console.error(error)
+      console.error("FETCH ERROR:", error)
       alert("Error submitting request")
     }
   }
