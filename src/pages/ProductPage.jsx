@@ -52,6 +52,8 @@ function ProductPage({ user }) {
       products: selected.join(", ")
     }
 
+    console.log("SENDING DATA:", data)
+
     try {
       const response = await fetch(
         "https://skintific-product-request.onrender.com/api/submit/",
@@ -72,8 +74,7 @@ function ProductPage({ user }) {
         setSubmitted(true)
         alert("Request submitted successfully!")
       } else {
-        alert("Server Error")
-        console.log(result)
+        alert(result)
       }
 
     } catch (error) {
