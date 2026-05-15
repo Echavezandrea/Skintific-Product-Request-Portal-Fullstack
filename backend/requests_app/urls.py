@@ -1,14 +1,6 @@
-from django.contrib import admin
 from django.urls import path
-from django.http import JsonResponse
-
-def home(request):
-    return JsonResponse({
-        "message": "Frontend and Backend Connected!"
-    })
+from .views import create_request
 
 urlpatterns = [
-    path('', home),   # this makes "/" work
-    path('admin/', admin.site.urls),
-    path('api/', home),
+    path('submit/', create_request),
 ]
