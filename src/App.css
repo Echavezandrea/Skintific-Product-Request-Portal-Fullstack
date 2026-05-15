@@ -130,3 +130,136 @@ button {
   font-weight: 500;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+
+/* RECEIPT STYLE PRODUCT PAGE */
+
+.receipt-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #eff6ff, #dbeafe);
+  padding: 40px;
+}
+
+.receipt-card {
+  width: 100%;
+  max-width: 750px;
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(37,99,235,0.12);
+}
+
+.receipt-title {
+  text-align: center;
+  color: #1d4ed8;
+  font-size: 34px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.receipt-user-info {
+  background: #f8fbff;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #dbeafe;
+}
+
+.receipt-user-info p {
+  margin: 10px 0;
+  color: #1e3a8a;
+  font-size: 15px;
+}
+
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  font-size: 22px;
+}
+
+.choices-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.choice-btn {
+  width: auto;
+  padding: 14px 22px;
+  background: #eff6ff;
+  color: #1e3a8a;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.choice-btn:hover {
+  transform: translateY(-2px);
+  background: #dbeafe;
+}
+
+.choice-btn.active {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: white;
+  border: none;
+}
+
+.receipt-summary {
+  margin-top: 35px;
+  background: #f8fbff;
+  border: 1px dashed #93c5fd;
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.receipt-summary h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.receipt-summary ul {
+  padding-left: 20px;
+}
+
+.receipt-summary li {
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+.empty-text {
+  color: #64748b;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.success-box {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #dcfce7;
+  color: #166534;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
