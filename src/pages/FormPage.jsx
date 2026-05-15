@@ -16,30 +16,11 @@ function FormPage({ onSubmit }) {
     cutoff: ""
   })
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
-    try {
-      const response = await fetch("http://127.0.0.1:8000/api/submit/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      })
-
-      const data = await response.json()
-
-      console.log(data)
-
-      alert("Request submitted successfully!")
-
-      onSubmit(form)
-
-    } catch (error) {
-      console.error(error)
-      alert("Error submitting request")
-    }
+    // move to ProductPage
+    onSubmit(form)
   }
 
   return (
@@ -54,15 +35,20 @@ function FormPage({ onSubmit }) {
           <h2>Skintific Product Request</h2>
 
           <form onSubmit={handleSubmit}>
+
             <input
+              type="text"
               placeholder="Full Name"
+              required
               onChange={(e) =>
                 setForm({ ...form, name: e.target.value })
               }
             />
 
             <input
-              placeholder="Email"
+              type="email"
+              placeholder="Email Address"
+              required
               onChange={(e) =>
                 setForm({ ...form, email: e.target.value })
               }
@@ -70,24 +56,27 @@ function FormPage({ onSubmit }) {
 
             <input
               type="date"
+              required
               onChange={(e) =>
                 setForm({ ...form, date: e.target.value })
               }
             />
 
             <select
+              required
               onChange={(e) =>
                 setForm({ ...form, rank: e.target.value })
               }
             >
               <option value="">Select Rank</option>
-              <option value="S">S Rank (4 products)</option>
-              <option value="A+">A+ Rank (3 products)</option>
-              <option value="A">A Rank (2 products)</option>
-              <option value="B">B Rank (2 products)</option>
+              <option value="S">S Rank (4 Products)</option>
+              <option value="A+">A+ Rank (3 Products)</option>
+              <option value="A">A Rank (2 Products)</option>
+              <option value="B">B Rank (2 Products)</option>
             </select>
 
             <select
+              required
               onChange={(e) =>
                 setForm({ ...form, cutoff: e.target.value })
               }
@@ -97,7 +86,10 @@ function FormPage({ onSubmit }) {
               <option value="Second">Second Cutoff</option>
             </select>
 
-            <button type="submit">Enter Shop</button>
+            <button type="submit">
+              Enter Shop
+            </button>
+
           </form>
         </div>
       </div>
@@ -105,10 +97,12 @@ function FormPage({ onSubmit }) {
       {/* RIGHT SIDE IMAGES */}
       <div className="image-section">
         <div className="image-grid">
+
           <img src={cushion} alt="Cushion" />
           <img src={serum} alt="Serum" />
           <img src={sunscreen} alt="Sunscreen" />
           <img src={cleanser} alt="Cleanser" />
+
         </div>
       </div>
 
